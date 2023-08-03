@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid"
-export const addtodo = (data) => {
+export const addToDo = (data) => {
     return {
         type: 'ADDTODO',
         payload: {
@@ -10,14 +10,14 @@ export const addtodo = (data) => {
     }
 }
 
-export const deletetodo = (id) => {
+export const deleteToDo = (id) => {
     return {
         type: 'DELETETODO',
         id
     }
 }
 
-export const edittodo = (id, newdata) => {
+export const editToDo = (id, newdata) => {
     return {
         type: 'EDITTODO',
         id: id,
