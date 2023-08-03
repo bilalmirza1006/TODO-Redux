@@ -5,26 +5,26 @@ const initialState = {
 const toDoReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADDTODO':
-            const { id, data } = action.payload;
+            const { id, input } = action.payload;
             return {
                 ...state,
                 list: [
                     ...state.list,
                     {
                         id: id,
-                        data: data
+                        input: input
                     }
                 ]
             };
         case 'DELETETODO':
-            const newList = state.list.filter((ele) => ele.id !== action.id);
+            const newList = state.list.filter((element) => element.id !== action.id);
             return {
                 ...state,
                 list: newList
             };
         case 'EDITTODO':
-            const updatedList = state.list.map((ele) =>
-                ele.id === action.id ? { ...ele, data: action.data } : ele
+            const updatedList = state.list.map((editEle) =>
+                editEle.id === action.id ? { ...editEle, input: action.input } : editEle
             );
             return {
                 ...state,

@@ -1,11 +1,11 @@
 import { v4 as uuidv4 } from "uuid"
-export const addToDo = (data) => {
+export const addToDo = (input) => {
     return {
         type: 'ADDTODO',
         payload: {
             id: uuidv4(),
-            // new data().getTime().toString(),
-            data: data
+            // new input().getTime().toString(),
+            input: input
         }
     }
 }
@@ -17,10 +17,10 @@ export const deleteToDo = (id) => {
     }
 }
 
-export const editToDo = (id, newdata) => {
+export const editToDo = (id, newinput) => {
     return {
         type: 'EDITTODO',
         id: id,
-        data: newdata,
+        input: newinput,
     }
 }////////////////////////////////////////
